@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employees_subreport" pageWidth="555" pageHeight="842" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="b69b4f7b-5b8e-4c93-8c59-4ed26dd7605d">
+
+    <parameter name="departmentId" class="java.lang.Long"/>
+    <parameter name="departmentName" class="java.lang.String"/>
+
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+
+    <field name="id" class="java.lang.Long"/>
+    <field name="name" class="java.lang.String"/>
+    <field name="role" class="java.lang.String"/>
+
+    <title>
+        <band height="30">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30" uuid="7db5b84e-9d34-4c82-9d6c-c8e4ad1e6b22"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Department: ]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="80" y="0" width="475" height="30" uuid="e40bfb2b-d312-4cbb-9879-31ef74d4a56c"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{departmentName}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="185" height="20" uuid="e3db71a3-7cfa-47d8-9d75-dc7b2512e8d1"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="190" y="0" width="185" height="20" uuid="c1cb7ff1-e1a7-4e71-95c1-ff522b98284f"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{role}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+</jasperReport>
